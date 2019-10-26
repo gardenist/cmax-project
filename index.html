@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/client.js"></script>
+    <script src="./js/service.js"></script>
+</head>
+<body>
+    <input type="text" id="title"><br/>
+    <textarea id="content" cols="30" rows="10"></textarea><br/>
+    <button id="write">글쓰기</button>
+    <script>
+         let button = document.querySelector('#write');
+         button.onclick = function (){
+            //  title 가져오기
+            let title =  document.querySelector('#title');
+            //  contetn 가져오기
+            let content =  document.querySelector('#content');
+            //  저장하기 
+            write(title.value, content.value)
+            //  비워주기
+            title.value=''; content.value='';
+         }
+    </script>
+</body>
+</html>
