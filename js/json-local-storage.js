@@ -10,7 +10,7 @@
 
 
 // }
-class CmaxStorage {
+class JsonLocalStorage {
     save (key, value) {
         console.log('save data'+ key, value);
         localStorage.setItem(key, JSON.stringify(value))
