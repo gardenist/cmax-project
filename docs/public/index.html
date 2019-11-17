@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Gardenist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Gardenist">
+<meta property="og:url" content="http://gardenist.github.io/cmax-project/public/index.html">
+<meta property="og:site_name" content="Gardenist">
+<meta property="og:locale" content="ko-KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gardenist">
+  
+    <link rel="alternate" href="/atom.xml" title="Gardenist" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Gardenist</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GitHub 정원을 관리하는 정원사들</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://gardenist.github.io/cmax-project/public"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Node-설치하기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/17/Node-설치하기/" class="article-date">
+  <time datetime="2019-11-17T09:53:54.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>►<a class="article-category-link" href="/categories/Javascript/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/Node-설치하기/">Node 설치하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh</span><br><span class="line">$ nvm install node</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/cmax-project/public/2019/11/17/Node-설치하기/" data-id="ck32toyy40003w6590zmgl23c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Node로-로컬-서버-실행하기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/17/Node로-로컬-서버-실행하기/" class="article-date">
+  <time datetime="2019-11-17T09:38:58.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>►<a class="article-category-link" href="/categories/Javascript/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/Node로-로컬-서버-실행하기/">Node로 로컬 서버 실행하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>로컬에 있는 HTML 파일을 브라우저로 열면 <code>file:///Users/gardenist/workspace/cmax-study/index.html</code> 과 같이 <code>http</code>가 아닌 <code>file</code> 프로토콜로 잡히고, <code>github.com</code>과 같은 호스트를 표현할 수 없다. 이 경우 <code>/ets/hosts</code> 파일을 이용해 도메인을 부여한 것처럼 브라우저에 접근할 수 없는데,<br>단순 <code>html</code> 파일 작업이라면 무방하지만 Ajax 통신이 필요한 경우 서버에서 모든 Origin에 대해 Ajax를 허용(Allow)하지 않는 이상 테스트할 방법이 없다.</p>
+<p>이를 위해 로컬의 파일을 localhost로 접속하기 위해 <code>node</code>의 <code>http-server</code> 모듈을 활용한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g http-server</span><br></pre></td></tr></table></figure>
+<p>위와 같이 <code>http-server</code>를 설치한 후 html 파일을 서빙할 디렉토리, 즉 html 파일이 위치한 곳으로 이동한 후 <code>http-server</code>를 입력하여 실행해준 후 브라우저에서 <code>localhost:8080</code>으로 접속한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;html파일이 있는 폴더&gt;</span><br><span class="line">$ http-server</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/54785476/69005835-cab0f700-096a-11ea-93fa-94fdbb9f2f92.png" alt><br>(해당 폴더의 파일 목록이 표시되는 것을 확인할 수 있다. 아무런 필터링 없이 접근이 가능하므로 당연히 테스트 용으로만 사용해야 하고, 실 운영을 위해서 사용할 때는 보안 관련 설정이 추가되어야 한다.)</p>
+<p><code>http-server --help</code>를 실행하면 실행 옵션에 대한 설명을 볼 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">usage: http-server [path] [options]</span><br><span class="line"></span><br><span class="line">options:</span><br><span class="line">  -p           Port to use [8080]</span><br><span class="line">  -a           Address to use [0.0.0.0]</span><br><span class="line">  -d           Show directory listings [true]</span><br><span class="line">  -i           Display autoIndex [true]</span><br><span class="line">  -g --gzip    Serve gzip files when possible [false]</span><br><span class="line">  -e --ext     Default file extension if none supplied [none]</span><br><span class="line">  -s --silent  Suppress log messages from output</span><br><span class="line">  --cors[=headers]   Enable CORS via the &quot;Access-Control-Allow-Origin&quot; header</span><br><span class="line">                     Optionally provide CORS headers list separated by commas</span><br><span class="line">  -o [path]    Open browser window after starting the server</span><br><span class="line">  -c           Cache time (max-age) in seconds [3600], e.g. -c10 for 10 seconds.</span><br><span class="line">               To disable caching, use -c-1.</span><br><span class="line">  -U --utc     Use UTC time format in log messages.</span><br><span class="line"></span><br><span class="line">  -P --proxy   Fallback proxy if the request cannot be resolved. e.g.: http://someurl.com</span><br><span class="line"></span><br><span class="line">  -S --ssl     Enable https.</span><br><span class="line">  -C --cert    Path to ssl cert file (default: cert.pem).</span><br><span class="line">  -K --key     Path to ssl key file (default: key.pem).</span><br><span class="line"></span><br><span class="line">  -r --robots  Respond to /robots.txt [User-agent: *\nDisallow: /]</span><br><span class="line">  --no-dotfiles  Do not show dotfiles</span><br><span class="line">  -h --help    Print this list and exit.</span><br></pre></td></tr></table></figure></p>
+<p>기본 포트는 8080 포트지만, <code>-p</code> 옵션을 줘서 <code>http-server -p 4000</code>과 같이 입력하면 <code>localhost:4000</code>으로 접속할 수 있다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/cmax-project/public/2019/11/17/Node로-로컬-서버-실행하기/" data-id="ck32t5r1p0002w659jf84852r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hexo-설치하기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/17/Hexo-설치하기/" class="article-date">
+  <time datetime="2019-11-17T09:01:10.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/Hexo-설치하기/">Hexo 설치하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Jekyll을 사용하려다가 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>를 사용해보기로 했다. <a href="https://github.com/barryclark/jekyll-now" target="_blank" rel="noopener">Jekyll Now</a>를 쓰면 조금 덜 번거롭겠지만, post 형식이 지킬과 헥소가 서로 다르지 않아서 post 파일들만 마이그레이션 하면 될 듯.</p>
+<p>Hexo는 Javascript로 작성된 블로그 프레임워크이고, 설치는 <code>npm</code>으로 간단히 할 수 있다. (node와 npm 설치는 생략)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>Hexo 설치 후 <code>hexo</code> 명령으로 초기화하고, 파일을 생성, 테스트, 배포까지 할 수 있다.</p>
+<h3 id="Hexo-초기화"><a href="#Hexo-초기화" class="headerlink" title="Hexo 초기화"></a>Hexo 초기화</h3><p><code>hexo init</code> 명령으로 초기화할 수 있는데, 디렉토리 이름을 넘겨주면 해당 디렉토리에 초기화를 하며, 전달하지 않는 경우 현재 디렉토리에 초기화한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [directory_name]</span><br><span class="line">$ <span class="built_in">cd</span> directory_name <span class="comment"># 디렉토리를 지정한 경우</span></span><br><span class="line">$ npm install <span class="comment"># node 모듈을 설치</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Hexo-포스트-파일-만들기"><a href="#Hexo-포스트-파일-만들기" class="headerlink" title="Hexo 포스트 파일 만들기"></a>Hexo 포스트 파일 만들기</h3><p>Hexo의 레이아웃은 크게 page, post, draft로 구분이 되고, page는 독립된 페이지, post는 글, draft는 post의 드래프트 버전으로 노출되지 않고, <code>publish</code> 명령을 통해 source/_posts 폴더로 옮기게 된다.<br>post는 <code>source/_posts</code> 폴더 하위에 위치하며, <code>generate</code> 시 정적 파일로 생성된다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] <span class="string">"제목"</span> <span class="comment"># scaffolds의 레이아웃을 활용하여 생성</span></span><br></pre></td></tr></table></figure></p>
+<p>직접 <code>source/posts</code> 폴더에 파일을 만들어도 무방하며, 아래 템플릿과 같이 입력하고, 제목과 파일명이 같도록 맞춰주면 된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 제목</span><br><span class="line">date: yyyy-MM-dd HH:mm:ss</span><br><span class="line">---</span><br><span class="line">내용</span><br></pre></td></tr></table></figure></p>
+<h3 id="로컬에서-확인하기"><a href="#로컬에서-확인하기" class="headerlink" title="로컬에서 확인하기"></a>로컬에서 확인하기</h3><p><code>hexo server</code> 명령을 통해 로컬 서버를 실행할 수 있으며, 기본적으로 4000번 포트를 통해 접속할 수 있다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>위와 같이 실행한 후 브라우저를 실행하여 <code>localhost:4000</code>으로 접속하면 hexo로 생성된 블로그의 모습을 볼 수 있다. <code>source/posts</code> 폴더 내의 파일을 편집하면 파일의 상태를 실시간으로 추적하여 수정되는 내용을 브라우저에서 새로고침하여 바로 확인할 수 있다. (<code>hexo server</code> 명령을 재수행하지 않아도 된다.)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/cmax-project/public/2019/11/17/Hexo-설치하기/" data-id="ck32s0b9t0000w659k10gd8gg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/17/hello-world/" class="article-date">
+  <time datetime="2019-11-17T08:58:23.407Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/cmax-project/public/2019/11/17/hello-world/" data-id="ck32s0b9y0001w659jtw65a4w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/Node-js/">Node.js</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">11월 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/17/Node-설치하기/">Node 설치하기</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/17/Node로-로컬-서버-실행하기/">Node로 로컬 서버 실행하기</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/17/Hexo-설치하기/">Hexo 설치하기</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 zzoco<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
