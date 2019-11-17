@@ -66,6 +66,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-20191117-로그인-기능" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cmax-project/public/2019/11/17/20191117-로그인-기능/" class="article-date">
+  <time datetime="2019-11-17T13:29:34.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/cmax-project/public/categories/CMAX-Proejct/">CMAX Proejct</a>►<a class="article-category-link" href="/cmax-project/public/categories/CMAX-Proejct/Homeworks/">Homeworks</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cmax-project/public/2019/11/17/20191117-로그인-기능/">20191117 로그인 기능</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>오늘 스터디에서는 회원 가입 페이지를 만들고 <code>user-service.js</code> 파일 내의 <code>UserService</code> 클래스에 <code>signUp</code> 함수를 만들어 로컬 스토리지에 회원 정보를 저장하는 것까지 진행했습니다.</p>
+<p>회원 가입 후 로그인 페이지로 이동시키기 위해 비어있는 <code>login.html</code> 파일을 만들었는데, 아래와 같이 동작하도록 <code>login.html</code> 파일과 <code>user-service.js</code> 파일을 수정해 봅시다.</p>
+<h2 id="1-로그인-페이지와-로그인-기능-만들기"><a href="#1-로그인-페이지와-로그인-기능-만들기" class="headerlink" title="1. 로그인 페이지와 로그인 기능 만들기"></a>1. 로그인 페이지와 로그인 기능 만들기</h2><ol>
+<li>아이디와 비밀번호를 입력할 수 있는 폼(Form)과 로그인 버튼 작성<ul>
+<li>sign-up.html 파일을 참고해서 만들어봅시다.</li>
+</ul>
+</li>
+<li>로그인 버튼을 클릭했을 때 동작하는 이벤트 핸들러를 작성합니다.</li>
+<li><code>UserService</code> 클래스에 <code>login(username, password)</code> 함수를 추가합니다.</li>
+<li><code>login</code> 함수에서 <code>signUp</code> 때와 동일한 <code>key</code>로 로컬 스토리지에서 사용자가 있는지 조회(<code>load</code>)합니다.<ol>
+<li>사용자가 없다면 예외를 발생합니다. (<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw" target="_blank" rel="noopener">MDN throw 문서</a>)<ul>
+<li>userService.login 함수를 호출한 <code>login.html</code> 페이지에서 이 예외를 <code>try-catch</code> 구문으로 처리할 수 있도록 합니다.</li>
+<li>화면에 메시지로 에러 메시지를 보여주거나, <code>alert()</code> 함수를 이용하거나, 자유롭게 편한 방법으로 표현해 주세요.</li>
+</ul>
+</li>
+<li>로그인 username input에 입력한 사용자가 있다면 비밀번호가 동일한지 비교합니다.<ul>
+<li>비밀번호가 일치하지 않는다면 4.1.과 마찬가지로 예외를 발생시킵니다.</li>
+<li>비밀번호가 일치한다면 게시글 목록 페이지(<code>post-list.html</code>)로 이동합니다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-더-해보고-싶다면"><a href="#2-더-해보고-싶다면" class="headerlink" title="2. 더 해보고 싶다면"></a>2. 더 해보고 싶다면</h2><ol>
+<li><code>json-local-storage.js</code>는 LocalStorage를 사용하는 클래스 <code>JsonLocalStorage</code>가 작성되어 있습니다.<br> SessionStorage를 사용하는 <code>json-session-storage.js</code> 파일을 작성해 봅시다.</li>
+<li>“1. 로그인 페이지와 로그인 기능 만들기”의 4.2.에서 로그인 성공 시 SessionStorage에 로그인 정보(User)를 저장하고,<br> <code>UserService</code>의 <code>getLoggedInUser</code> 함수를 세션에 저장된 로그인 정보를 가져오도록 수정해 봅시다.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/2019/11/17/20191117-로그인-기능/" data-id="ck331jdqq0000s259jc4e6zm3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Node-설치하기" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cmax-project/public/2019/11/17/Node-설치하기/" class="article-date">
@@ -96,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gardenist.github.io/2019/11/17/Node-설치하기/" data-id="ck32toyy40003w6590zmgl23c" class="article-share-link">Share</a>
+      <a data-url="http://gardenist.github.io/2019/11/17/Node-설치하기/" data-id="ck331jdqu0001s259fairsfvh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gardenist.github.io/2019/11/17/Node로-로컬-서버-실행하기/" data-id="ck32t5r1p0002w659jf84852r" class="article-share-link">Share</a>
+      <a data-url="http://gardenist.github.io/2019/11/17/Node로-로컬-서버-실행하기/" data-id="ck331jdr10004s25938t3ciza" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gardenist.github.io/2019/11/17/Hexo-설치하기/" data-id="ck32s0b9t0000w659k10gd8gg" class="article-share-link">Share</a>
+      <a data-url="http://gardenist.github.io/2019/11/17/Hexo-설치하기/" data-id="ck331jdr00003s25987rbnx1j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gardenist.github.io/2019/11/17/hello-world/" data-id="ck32s0b9y0001w659jtw65a4w" class="article-share-link">Share</a>
+      <a data-url="http://gardenist.github.io/2019/11/17/hello-world/" data-id="ck331f5d50000jh59jdy9cr4v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +324,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/Node-js/">Node.js</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/CMAX-Proejct/">CMAX Proejct</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/CMAX-Proejct/Homeworks/">Homeworks</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/Node-js/">Node.js</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -283,6 +350,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/20191117-로그인-기능/">20191117 로그인 기능</a>
+          </li>
         
           <li>
             <a href="/cmax-project/public/2019/11/17/Node-설치하기/">Node 설치하기</a>

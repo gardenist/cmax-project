@@ -8,7 +8,7 @@ subtitle: GitHub 정원을 관리하는 정원사들
 description:
 author: zzoco
 language: ko-KR
-timezone: UTC+9
+timezone: asia/seoul
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

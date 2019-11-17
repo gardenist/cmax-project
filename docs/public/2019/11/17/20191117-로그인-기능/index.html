@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>20191117 로그인 기능 | Gardenist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="오늘 스터디에서는 회원 가입 페이지를 만들고 user-service.js 파일 내의 UserService 클래스에 signUp 함수를 만들어 로컬 스토리지에 회원 정보를 저장하는 것까지 진행했습니다. 회원 가입 후 로그인 페이지로 이동시키기 위해 비어있는 login.html 파일을 만들었는데, 아래와 같이 동작하도록 login.html 파일과 user-se">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191117 로그인 기능">
+<meta property="og:url" content="http://gardenist.github.io/2019/11/17/20191117-로그인-기능/index.html">
+<meta property="og:site_name" content="Gardenist">
+<meta property="og:description" content="오늘 스터디에서는 회원 가입 페이지를 만들고 user-service.js 파일 내의 UserService 클래스에 signUp 함수를 만들어 로컬 스토리지에 회원 정보를 저장하는 것까지 진행했습니다. 회원 가입 후 로그인 페이지로 이동시키기 위해 비어있는 login.html 파일을 만들었는데, 아래와 같이 동작하도록 login.html 파일과 user-se">
+<meta property="og:locale" content="ko-KR">
+<meta property="og:updated_time" content="2019-11-17T13:48:49.484Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20191117 로그인 기능">
+<meta name="twitter:description" content="오늘 스터디에서는 회원 가입 페이지를 만들고 user-service.js 파일 내의 UserService 클래스에 signUp 함수를 만들어 로컬 스토리지에 회원 정보를 저장하는 것까지 진행했습니다. 회원 가입 후 로그인 페이지로 이동시키기 위해 비어있는 login.html 파일을 만들었는데, 아래와 같이 동작하도록 login.html 파일과 user-se">
+  
+    <link rel="alternate" href="/atom.xml" title="Gardenist" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/cmax-project/public/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/cmax-project/public/" id="logo">Gardenist</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/cmax-project/public/" id="subtitle">GitHub 정원을 관리하는 정원사들</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/cmax-project/public/">Home</a>
+        
+          <a class="main-nav-link" href="/cmax-project/public/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://gardenist.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-20191117-로그인-기능" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cmax-project/public/2019/11/17/20191117-로그인-기능/" class="article-date">
+  <time datetime="2019-11-17T13:29:34.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/cmax-project/public/categories/CMAX-Proejct/">CMAX Proejct</a>►<a class="article-category-link" href="/cmax-project/public/categories/CMAX-Proejct/Homeworks/">Homeworks</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      20191117 로그인 기능
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>오늘 스터디에서는 회원 가입 페이지를 만들고 <code>user-service.js</code> 파일 내의 <code>UserService</code> 클래스에 <code>signUp</code> 함수를 만들어 로컬 스토리지에 회원 정보를 저장하는 것까지 진행했습니다.</p>
+<p>회원 가입 후 로그인 페이지로 이동시키기 위해 비어있는 <code>login.html</code> 파일을 만들었는데, 아래와 같이 동작하도록 <code>login.html</code> 파일과 <code>user-service.js</code> 파일을 수정해 봅시다.</p>
+<h2 id="1-로그인-페이지와-로그인-기능-만들기"><a href="#1-로그인-페이지와-로그인-기능-만들기" class="headerlink" title="1. 로그인 페이지와 로그인 기능 만들기"></a>1. 로그인 페이지와 로그인 기능 만들기</h2><ol>
+<li>아이디와 비밀번호를 입력할 수 있는 폼(Form)과 로그인 버튼 작성<ul>
+<li>sign-up.html 파일을 참고해서 만들어봅시다.</li>
+</ul>
+</li>
+<li>로그인 버튼을 클릭했을 때 동작하는 이벤트 핸들러를 작성합니다.</li>
+<li><code>UserService</code> 클래스에 <code>login(username, password)</code> 함수를 추가합니다.</li>
+<li><code>login</code> 함수에서 <code>signUp</code> 때와 동일한 <code>key</code>로 로컬 스토리지에서 사용자가 있는지 조회(<code>load</code>)합니다.<ol>
+<li>사용자가 없다면 예외를 발생합니다. (<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/throw" target="_blank" rel="noopener">MDN throw 문서</a>)<ul>
+<li>userService.login 함수를 호출한 <code>login.html</code> 페이지에서 이 예외를 <code>try-catch</code> 구문으로 처리할 수 있도록 합니다.</li>
+<li>화면에 메시지로 에러 메시지를 보여주거나, <code>alert()</code> 함수를 이용하거나, 자유롭게 편한 방법으로 표현해 주세요.</li>
+</ul>
+</li>
+<li>로그인 username input에 입력한 사용자가 있다면 비밀번호가 동일한지 비교합니다.<ul>
+<li>비밀번호가 일치하지 않는다면 4.1.과 마찬가지로 예외를 발생시킵니다.</li>
+<li>비밀번호가 일치한다면 게시글 목록 페이지(<code>post-list.html</code>)로 이동합니다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-더-해보고-싶다면"><a href="#2-더-해보고-싶다면" class="headerlink" title="2. 더 해보고 싶다면"></a>2. 더 해보고 싶다면</h2><ol>
+<li><code>json-local-storage.js</code>는 LocalStorage를 사용하는 클래스 <code>JsonLocalStorage</code>가 작성되어 있습니다.<br> SessionStorage를 사용하는 <code>json-session-storage.js</code> 파일을 작성해 봅시다.</li>
+<li>“1. 로그인 페이지와 로그인 기능 만들기”의 4.2.에서 로그인 성공 시 SessionStorage에 로그인 정보(User)를 저장하고,<br> <code>UserService</code>의 <code>getLoggedInUser</code> 함수를 세션에 저장된 로그인 정보를 가져오도록 수정해 봅시다.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gardenist.github.io/2019/11/17/20191117-로그인-기능/" data-id="ck331jdqq0000s259jc4e6zm3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/cmax-project/public/2019/11/17/Node-설치하기/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Node 설치하기</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/CMAX-Proejct/">CMAX Proejct</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/CMAX-Proejct/Homeworks/">Homeworks</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/">Javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/cmax-project/public/categories/Javascript/Node-js/">Node.js</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/cmax-project/public/archives/2019/11/">11월 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/20191117-로그인-기능/">20191117 로그인 기능</a>
+          </li>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/Node-설치하기/">Node 설치하기</a>
+          </li>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/Node로-로컬-서버-실행하기/">Node로 로컬 서버 실행하기</a>
+          </li>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/Hexo-설치하기/">Hexo 설치하기</a>
+          </li>
+        
+          <li>
+            <a href="/cmax-project/public/2019/11/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 zzoco<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/cmax-project/public/" class="mobile-nav-link">Home</a>
+  
+    <a href="/cmax-project/public/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/cmax-project/public/fancybox/jquery.fancybox.css">
+  <script src="/cmax-project/public/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/cmax-project/public/js/script.js"></script>
+
+  </div>
+</body>
+</html>
