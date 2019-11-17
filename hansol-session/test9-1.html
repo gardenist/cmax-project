@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+  <script type="text/javascript">
+    // Example case.
+    document.body.innerHTML = `
+    <table id="card-container">
+      <tbody>
+        <tr>
+          <td class="card">down</td>
+          <td class="card">up</td>
+        </tr>
+        <tr>
+          <td class="card">down</td>
+          <td class="card">down</td>
+        </tr>
+      </tbody>
+    </table>`;
+
+    function setup() {
+      let cards = document.getElementsByClassName('card');
+      
+      for(let i = 0; i < cards.length ; i++) {
+        cards.item(i).onclick = function(e) {
+          for(let j = 0 ; j < cards.length ; j++) {
+            if(i === j) {
+              cards.item(i).innerHTML = 'up';
+            } else {
+              cards[j].innerHTML = 'down'; 
+            }
+          }
+        }
+      }
+    }
+
+    setup();
+
+    document.getElementsByClassName("card")[0].click();
+  </script>
+</body>
+</html>
