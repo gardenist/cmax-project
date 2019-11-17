@@ -1,0 +1,13 @@
+---
+title: Node 설치하기
+date: 2019-11-17 18:53:54
+tags:
+categories:
+    - Javascript
+    - Node.js
+---
+
+```bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh
+$ nvm install node
+```
