@@ -19,6 +19,10 @@ class PostService {
         this.userService = new UserService();
     }
 
+getNextID() {
+    return this.storage.load('posts.nextId') || 1;
+}
+
     write(title, content) {
         // ID
         // ID sequence (1, 2, 3, 4, ...)

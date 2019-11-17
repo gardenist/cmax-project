@@ -19,5 +19,9 @@ document.querySelector('#write').onclick = function() {
     postService.write(title.value, content.value);
     
     //  비워주기
-    title.value=''; content.value='';
+    //  title.value=''; content.value='';
+
+    location.href = './post-list.html'
+    
+
 }

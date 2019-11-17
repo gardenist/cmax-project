@@ -1,0 +1,62 @@
+<!--게시글 목록을 보여주는 페이지-->
+<!DOCTYPE html>
+<html lang="ko">
+    <html>
+        <head>
+<title>게시글 목록</title>
+<script src="./js/data.js"></script>
+<script src="./js/json-local-storage.js"></script>
+<script src="./js/user-service.js"></script>
+<script src="./js/post-service.js"></script>
+        </head>
+        <body>
+            <a href="./write.html"><button border="1">글쓰기</button></a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                Title
+            </td>
+            <td>
+                Writer
+            </td>
+        </tr>
+    </thead>
+    <tbody id="post_list">
+       
+    </tbody>
+</table>
+    
+<script>
+    function renderTemplate(post){
+        return `
+        <tr>
+                <td>
+                    ${post.id}
+                </td>
+                <td>
+                    <a href="./post.html?id=${post.id}">${post.title}</a></td>
+                <td>${post.username}</td>
+            </tr>
+        `;
+    }
+    // posts의 nextID 를 읽어오기 
+    let postService = new PostService();
+    let nextID = postService.getNextID();
+    // post의 1번부터~nextId-1까지 게시글 정보를 읽어오기 
+    for (let i=1; i < nextID; i++) {
+    // 하나씩 읽어오면서 Id, title, writer를 html로 써주기 
+    let post = postService.read(i)
+    let template = renderTemplate(post)
+    // tbody 태그에 추가하기  머 해짜나 ^^* 
+        document.querySelector('#post_list').innerHTML += template
+    }
+
+    
+</script>
+        </body>
+    </html>
