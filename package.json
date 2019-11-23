@@ -1,0 +1,26 @@
+{
+  "name": "cmax-study",
+  "version": "1.0.0",
+  "description": "Pure Javascript 기반으로 간단한 게시판을 만들며, ES5와 이 후의 자바스크립트, 서버 개념 등을 학습하는 프로젝트입니다.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://zzoco@github.com/zzoco/cmax-study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzoco/cmax-study/issues"
+  },
+  "homepage": "https://github.com/zzoco/cmax-study#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}
