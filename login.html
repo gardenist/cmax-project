@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>로그인 페이지</title>
+    <title>로그인하기</title>
+
+    <style>
+        label {
+            display: block;
+
+            margin-top: 20px;
+        }
+
+        button {
+            border: 0;
+            padding: 5px;
+            background-color: lightgray;
+            border-radius: 3px;
+        }
+    </style>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/json-local-storage.js"></script>
+    <script src="./js/json-session-storage.js"></script>
+    <script src="./js/user-service.js"></script>
 </head>
 <body>
-    <h1>로그인</h1>
+    <form>
+        <h1>로그인</h1>
+        <label for="username">username
+            <input id="username">
+        </label>
+
+        <label for="password">Password
+            <input id="password" type="password">
+        </label>
+
+        <button id="loginButton" type="button">로그인</button>
+    </form>
+
+    <script>
+        (function() {
+            // login 버튼을 누르면 이벤트 핸들러 호출하기
+            let loginButton = document.getElementById('loginButton');
+
+            loginButton.onclick = function() {
+                // username 가져오기
+                let username = document.querySelector('#username').value;
+
+                // password 가져오기
+                let password = document.querySelector('#password').value;
+
+                // 저장하기
+                let userService = new UserService();
+                userService.logIn(username, password, function() {
+                    // 성공 콜백 작성하기
+                    location.href = './post-list.html';
+                }, function(message) {
+                    // 실패 콜백 작성하기
+                    alert(message);
+                });
+            }
+        })(); // IIFE
+
+    </script>
 </body>
 </html>

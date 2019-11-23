@@ -4,12 +4,14 @@
 class UserService {
     constructor() {
         this.storage = new JsonLocalStorage();
+        this.session = new JsonSessionStorage();
     }
 
     getLoggedInUser() {
-        // 로그인 된 것처럼 로그인 사용자 정보를 반환
-
-        return new User('junyoung', '12345');
+        // 세션 스토리지에 저장된 사용자 정보를 가져오기
+        let loggedInUser = this.session.load('loggedInUser');
+        console.log(loggedInUser);
+        return loggedInUser;
     }
 
     signUp(username, password) {
@@ -22,7 +24,34 @@ class UserService {
         this.storage.save(key, user);
     }
 
-    logIn(username, password) {
+    /*
+     이 로그인을 쓸 때 success는 이렇게 사용해주세요
+     login('', '', function(message) { 
+
+     }, function(message) {
+         // 실패 메시지를 처리해주세요.
+     })
+     */
+    logIn(username, password, success, failed) {
+        // 사용자 정보를 가져오기
+        let user = this.storage.load('users.' + username);
+
+        // 사용자 정보가 없을 때
+        if(!user) {
+            // 실패 콜백에 메시지를 담아 호출하기
+            failed('사용자 ' + username + '의 정보를 찾을 수 없습니다.');
+        } else {
+            // 사용자 정보가 존재하는 경우
+            if(user.password === password) {
+                // 비밀번호가 일치하는 경우
+                this.session.save('loggedInUser', new User(username, password));
+                success();
+            } else {
+                // 비밀번호가 일치하지 않는 경우
+                failed('비밀번호가 일치하지 않습니다.');
+            }
+        }
+
         // username으로 찾을 수 없는 경우
         // password가 일치하지 않을 경우
 
