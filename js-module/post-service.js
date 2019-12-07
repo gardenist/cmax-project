@@ -13,13 +13,6 @@
  Update
  Delete
  */
-const data = require('./data.js');
-const User = data.User;
-const Post = data.Post;
-
-const JsonLocalStorage = require('./json-local-storage');
-const UserService = require('./user-service');
-
 class PostService {
     constructor() {
         this.storage = new JsonLocalStorage();
@@ -73,3 +66,5 @@ getNextID() {
 
     }
 }
+
+module.exports = PostService;
